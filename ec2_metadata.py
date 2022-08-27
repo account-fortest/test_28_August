@@ -11,6 +11,7 @@ def loop_through_nested_loop(dict_):
     for key, value in dict_.items():
         if type(value) is dict:
             yield (key)
+            yield from loop_through_nested_loop(value)
         else:
             yield (key)
 
